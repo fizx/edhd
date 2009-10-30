@@ -6,18 +6,30 @@ nested experiments.
 
 == Overview
 
-Experiments are defined as follows: 
+Experiments are defined as follows:
 
-  experiment name = "hello world", seed = current_user.login do
-    hypothesis name = "a", weight = 3 do
+* Exactly one of the hypotheses blocks in an experiment will run.
+* A hypothesis will be chosen with probability proportional to its weight.
+* You can pass in a seed for the random number generator to ensure that, for example, a given user always sees the same hypothesis.
+* An experiment block will log which hypothesis actually runs by calling $observer.hypothesized(experiment_name, hypothesis_name, seed)
+* Calling observation(name, value, seed) will log to $observer.observed(name, value, seed).
+* $observer = IOObserver(STDOUT) will give you a sample observer, but you'll probably want to log to a database or something.  Exercise left to the user.
+* Statistical analysis is an exercise left to the user.
+
+  # def experiment(name = "default", seed = rand, &block)
+  experiment "hello world", current_user.login do
+  
+    # def hypothesis(name, weight = 1, &block)
+    hypothesis "a1", 3 do
       @a = 1
     end
-    hypothesis name = "b" do
+    
+    hypothesis "a2" do
       @a = 2
     end
   end
 
-  observation name = "value of a", value = @a, seed = current_user.login
+  observation "value of a", @a, current_user.login
 
 
 == Copyright
