@@ -6,7 +6,7 @@ nested experiments.
 
 == Overview
 
-Experiments are defined as follows:
+Experiments are defined as follows (look at the specs for more details):
 
 * Exactly one of the hypotheses blocks in an experiment will run.
 * A hypothesis will be chosen with probability proportional to its weight.
