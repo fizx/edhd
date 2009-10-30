@@ -18,8 +18,10 @@ Experiments are defined as follows:
 
 
   experiment "hello world", current_user.login do
+            # name          seed   
   
     hypothesis "a1", 3 do
+                   # weight
       @a = 1
     end
     
