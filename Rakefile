@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "edhd"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = "Simple AB testing"
+    gem.description = "Simple AB testing"
     gem.email = "kyle@kylemaxwell.com"
     gem.homepage = "http://github.com/fizx/edhd"
     gem.authors = ["Kyle Maxwell"]
