@@ -17,7 +17,7 @@ Experiments are defined as follows:
     end
   end
 
-	observation name = "value of a", value = @a, seed = current_user.login
+  observation name = "value of a", value = @a, seed = current_user.login
 
 
 == Copyright
