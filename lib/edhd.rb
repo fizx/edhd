@@ -4,7 +4,6 @@ module Kernel
 
   def experiment(name = "default", seed = rand)
     $hypothesis_sets ||= []
-    $hypothesis_names ||= []
     $hypothesis_sets << []
     yield
     hypothesis_set = $hypothesis_sets.pop
