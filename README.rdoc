@@ -15,11 +15,14 @@ Experiments are defined as follows:
 * Calling observation(name, value, seed) will log to $observer.observed(name, value, seed).
 * $observer = IOObserver(STDOUT) will give you a sample observer, but you'll probably want to log to a database or something.  Exercise left to the user.
 * Statistical analysis is an exercise left to the user.
-
+    
+    # Method signatures
     # def experiment(name = "default", seed = rand, &block)
+    # def hypothesis(name, weight = 1, &block)
+    # def observation(name, value, seed)
+    
+    # Example
     experiment "hello world", current_user.login do
-  
-      # def hypothesis(name, weight = 1, &block)
       hypothesis "a1", 3 do
         @a = 1
       end
