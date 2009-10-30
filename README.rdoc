@@ -16,21 +16,20 @@ Experiments are defined as follows:
 * $observer = IOObserver(STDOUT) will give you a sample observer, but you'll probably want to log to a database or something.  Exercise left to the user.
 * Statistical analysis is an exercise left to the user.
 
-
-  experiment "hello world", current_user.login do
-            # name          seed   
+    # def experiment(name = "default", seed = rand, &block)
+    experiment "hello world", current_user.login do
   
-    hypothesis "a1", 3 do
-                   # weight
-      @a = 1
-    end
+      # def hypothesis(name, weight = 1, &block)
+      hypothesis "a1", 3 do
+        @a = 1
+      end
     
-    hypothesis "a2" do
-      @a = 2
+      hypothesis "a2" do
+        @a = 2
+      end
     end
-  end
 
-  observation "value of a", @a, current_user.login
+    observation "value of a", @a, current_user.login
 
 
 == Copyright
